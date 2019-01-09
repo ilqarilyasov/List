@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     let itemController = ItemController()
 
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     func updateViews() {
-        label.text = nil
+        textView.text = nil
     }
 
     @IBAction func shouldAdd(_ sender: UIButton) {
@@ -32,12 +32,18 @@ class ViewController: UIViewController {
         }
         
         let joined = itemController.items.map({ $0.name })
-        label.text = joined.joined(separator: "\n")
+        textView.text = "● \(joined.joined(separator: "\n● "))"
+        textField.text = nil
     }
     
     @IBAction func shouldReset(_ sender: UIButton) {
         itemController.resetItems()
         updateViews()
     }
+    
+    @IBAction func shouldPrint(_ sender: UIButton) {
+        print(itemController.items.map({ $0.name }).joined(separator: ", "))
+    }
+    
 }
 

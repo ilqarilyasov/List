@@ -14,7 +14,7 @@
         <!--View Controller-->
         <scene sceneID="Rqs-c2-W4y">
             <objects>
-                <viewController id="OcK-FG-ZUW" sceneMemberID="viewController">
+                <viewController id="OcK-FG-ZUW" customClass="ViewController" customModule="List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P3l-eg-yyy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,6 +34,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vh-Vy-QNn">
                                                 <rect key="frame" x="313" y="0.0" width="30" height="30"/>
                                                 <state key="normal" title="Add"/>
+                                                <connections>
+                                                    <action selector="shouldAdd:" destination="OcK-FG-ZUW" eventType="touchUpInside" id="nEb-nC-rEP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -49,10 +52,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OMU-cO-erc">
                                                 <rect key="frame" x="0.0" y="0.0" width="167.5" height="30"/>
                                                 <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="shouldReset:" destination="OcK-FG-ZUW" eventType="touchUpInside" id="4xH-4U-6mQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deP-tw-oM9">
                                                 <rect key="frame" x="175.5" y="0.0" width="167.5" height="30"/>
                                                 <state key="normal" title="Print"/>
+                                                <connections>
+                                                    <action selector="shouldPrint:" destination="OcK-FG-ZUW" eventType="touchUpInside" id="f8i-IF-hIR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -68,6 +77,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bRk-b3-8g9"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="B4Y-qD-Ghu" id="M7d-Kf-AVy"/>
+                        <outlet property="textView" destination="0se-S0-hdb" id="OrN-EG-QIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Yb-xx-K0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
