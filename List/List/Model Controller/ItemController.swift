@@ -9,10 +9,12 @@
 import Foundation
 
 class ItemController {
-    var items = [String]()
+    
+    var items = [Item]()
     
     func add(_ item: String) {
-        items.append(item)
+        let newItem = Item(name: item)
+        items.append(newItem)
     }
     
     func resetItems() {
